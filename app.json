@@ -2,7 +2,13 @@
   "expo": {
     "name": "StarFlix",
     "slug": "StarFlix",
+    "scheme": "StarFlix",
     "version": "1.0.0",
+    "extra": {
+      "TMDB_API_KEY": "d7c6aa191629170a8dfea80f78e1dcd6",
+      "BASE_URL": "https://api.themoviedb.org/3/",
+      "IMAGE_BASE_URL": "https://image.tmdb.org/t/p/original/"
+    },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -11,6 +17,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "assetBundlePatterns": ["assets/fonts/*", "assets/images/*", "src/**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -22,6 +29,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [["expo-font", { "fonts": "./assets/fonts/Salsa-Regular.ttf" }]]
   }
 }
