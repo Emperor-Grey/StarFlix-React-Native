@@ -44,7 +44,10 @@ const _layout = () => {
             headerShown: false,
             headerTitle: 'Intro',
           }}
-        />
+        >
+          <Stack.Screen name="index" />
+          <Stack.Screen name="main" />
+        </Stack>
       </QueryClientProvider>
     </PaperProvider>
   );

@@ -8,7 +8,7 @@ export default function App() {
   const router = useRouter();
 
   const handleNavigation = () => {
-    router.replace('/home');
+    router.replace('/main');
   };
 
   useEffect(() => {
