@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { Appbar, useTheme } from 'react-native-paper';
 
 import type {
@@ -12,6 +12,7 @@ import type {
   TabNavigationState,
 } from '@react-navigation/native';
 import { withLayoutContext } from 'expo-router';
+import Animated, { FadeInDown, FadeOutUp } from 'react-native-reanimated';
 
 const { Navigator } = createMaterialTopTabNavigator();
 
@@ -25,10 +26,19 @@ export const MaterialTopTabs = withLayoutContext<
 export default function TopTabsLayout() {
   const theme = useTheme();
 
+  const AnimatedSafeAreaView = Animated.createAnimatedComponent(SafeAreaView);
+
   return (
-    <SafeAreaView style={styles.container}>
+    <AnimatedSafeAreaView
+      className={'flex-1'}
+      exiting={FadeOutUp.duration(400).delay(500)}
+      entering={FadeInDown.duration(400).delay(500)}
+    >
       <Appbar.Header>
-        <Appbar.Content title="Discover" />
+        <Appbar.Content
+          title="Discover"
+          titleStyle={{ fontFamily: 'Salsa-Regular' }}
+        />
       </Appbar.Header>
       <MaterialTopTabs
         tabBarPosition="top"
@@ -40,6 +50,11 @@ export default function TopTabsLayout() {
             backgroundColor: theme.colors.primary,
           },
           tabBarStyle: { backgroundColor: theme.colors.background },
+          tabBarLabelStyle: {
+            fontFamily: 'Salsa-Regular',
+            textTransform: 'none',
+            fontSize: theme.fonts.titleMedium.fontSize,
+          },
         }}
       >
         <MaterialTopTabs.Screen
@@ -51,12 +66,6 @@ export default function TopTabsLayout() {
           options={{ title: 'Tv Shows' }}
         />
       </MaterialTopTabs>
-    </SafeAreaView>
+    </AnimatedSafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

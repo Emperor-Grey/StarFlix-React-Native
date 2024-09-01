@@ -33,7 +33,7 @@ const BottomLayout = () => {
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons
               name={focused ? 'home' : 'home-outline'}
-              size={24}
+              size={26}
               color={color}
             />
           ),
@@ -46,7 +46,7 @@ const BottomLayout = () => {
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons
               name={focused ? 'compass' : 'compass-outline'}
-              size={24}
+              size={26}
               color={color}
             />
           ),
@@ -58,9 +58,9 @@ const BottomLayout = () => {
           tabBarLabel: 'My List',
           tabBarIcon: ({ color, focused }) =>
             focused ? (
-              <MaterialIcons name="library-books" size={24} color={color} />
+              <MaterialIcons name="library-books" size={26} color={color} />
             ) : (
-              <LibraryBooksOutlineIcon size={24} color={color} />
+              <LibraryBooksOutlineIcon size={26} color={color} />
             ),
         }}
       />
@@ -71,7 +71,7 @@ const BottomLayout = () => {
           tabBarIcon: ({ color, focused }) => (
             <Setting2
               variant={focused ? 'Bold' : 'Outline'}
-              size={24}
+              size={26}
               color={color}
             />
           ),
