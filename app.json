@@ -1,13 +1,16 @@
 {
   "expo": {
     "name": "StarFlix",
-    "slug": "StarFlix",
-    "scheme": "StarFlix",
-    "version": "1.0.0",
+    "slug": "starFlix",
+    "scheme": ["starFlix"],
+    "version": "1.0.1",
     "extra": {
       "TMDB_API_KEY": "d7c6aa191629170a8dfea80f78e1dcd6",
       "BASE_URL": "https://api.themoviedb.org/3/",
-      "IMAGE_BASE_URL": "https://image.tmdb.org/t/p/original/"
+      "IMAGE_BASE_URL": "https://image.tmdb.org/t/p/original/",
+      "eas": {
+        "projectId": "4714b008-4477-453e-ae7f-ae1e61ed16ba"
+      }
     },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,7 +23,8 @@
     "assetBundlePatterns": [
       "assets/fonts/*",
       "assets/images/*",
-      "src/**/*"
+      "src/**/*",
+      "app/**/*"
     ],
     "ios": {
       "supportsTablet": true
@@ -35,13 +39,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      [
-        "expo-font",
-        {
-          "fonts": "./assets/fonts/Salsa-Regular.ttf"
-        }
-      ]
-    ]
+    "owner": "king_grey"
   }
 }

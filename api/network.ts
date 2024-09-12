@@ -1,18 +1,12 @@
 import Constants from 'expo-constants';
+import { Config, MovieListResponse } from './types';
 
-interface ExpoConfigExtra {
-  TMDB_API_KEY: string | undefined;
-  BASE_URL: string | undefined;
-  IMAGE_BASE_URL: string | undefined;
-}
+export const { TMDB_API_KEY, BASE_URL, IMAGE_BASE_URL } =
+  (Constants.expoConfig?.extra as Config) || {};
 
-const { TMDB_API_KEY, BASE_URL, IMAGE_BASE_URL } =
-  (Constants.expoConfig?.extra as ExpoConfigExtra) || {};
-
-console.log('BASE_URL:', BASE_URL);
-console.log('API_KEY:', TMDB_API_KEY);
-
-export async function getPopularMovies(page: number) {
+export async function getPopularMovies(
+  page: number
+): Promise<MovieListResponse> {
   console.log('Fetching popular movies for page:', page);
 
   try {
@@ -24,7 +18,9 @@ export async function getPopularMovies(page: number) {
   }
 }
 
-export async function getTopRatedMovies(page: number) {
+export async function getTopRatedMovies(
+  page: number
+): Promise<MovieListResponse> {
   console.log('Fetching popular movies for page:', page);
 
   try {
@@ -36,7 +32,9 @@ export async function getTopRatedMovies(page: number) {
   }
 }
 
-export async function getUpcomingMovies(page: number) {
+export async function getUpcomingMovies(
+  page: number
+): Promise<MovieListResponse> {
   console.log('Fetching popular movies for page:', page);
 
   try {
@@ -48,7 +46,7 @@ export async function getUpcomingMovies(page: number) {
   }
 }
 
-export async function getNowPlaying(page: number) {
+export async function getNowPlaying(page: number): Promise<MovieListResponse> {
   console.log('Fetching popular movies for page:', page);
 
   try {

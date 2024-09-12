@@ -12,7 +12,6 @@ import type {
   TabNavigationState,
 } from '@react-navigation/native';
 import { withLayoutContext } from 'expo-router';
-import Animated, { FadeInDown, FadeOutUp } from 'react-native-reanimated';
 
 const { Navigator } = createMaterialTopTabNavigator();
 
@@ -26,19 +25,15 @@ export const MaterialTopTabs = withLayoutContext<
 export default function TopTabsLayout() {
   const theme = useTheme();
 
-  const AnimatedSafeAreaView = Animated.createAnimatedComponent(SafeAreaView);
-
   return (
-    <AnimatedSafeAreaView
-      className={'flex-1'}
-      exiting={FadeOutUp.duration(400).delay(500)}
-      entering={FadeInDown.duration(400).delay(500)}
-    >
+    <SafeAreaView className={'flex-1'}>
       <Appbar.Header>
         <Appbar.Content
           title="Discover"
           titleStyle={{ fontFamily: 'Salsa-Regular' }}
         />
+        <Appbar.Action icon={'magnify'} onPress={() => {}} />
+        <Appbar.Action icon={'filter-variant'} onPress={() => {}} />
       </Appbar.Header>
       <MaterialTopTabs
         tabBarPosition="top"
@@ -66,6 +61,6 @@ export default function TopTabsLayout() {
           options={{ title: 'Tv Shows' }}
         />
       </MaterialTopTabs>
-    </AnimatedSafeAreaView>
+    </SafeAreaView>
   );
 }
