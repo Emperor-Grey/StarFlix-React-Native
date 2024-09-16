@@ -1,18 +1,18 @@
-import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
-import { withLayoutContext } from 'expo-router';
-import { Setting2 } from 'iconsax-react-native';
-import React from 'react';
-import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navigation';
-import LibraryBooksOutlineIcon from '../../components/LibraryOutline';
+import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import { withLayoutContext } from "expo-router";
+import { Setting2 } from "iconsax-react-native";
+import React from "react";
+import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
+import LibraryBooksOutlineIcon from "../../components/LibraryOutline";
 
 import type {
   ParamListBase,
   TabNavigationState,
-} from '@react-navigation/native';
+} from "@react-navigation/native";
 import type {
   MaterialBottomTabNavigationEventMap,
   MaterialBottomTabNavigationOptions,
-} from 'react-native-paper/react-navigation';
+} from "react-native-paper/react-navigation";
 
 const { Navigator } = createMaterialBottomTabNavigator();
 
@@ -29,10 +29,10 @@ const BottomLayout = () => {
       <MaterialBottomTabs.Screen
         name="Home"
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: "Home",
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons
-              name={focused ? 'home' : 'home-outline'}
+              name={focused ? "home" : "home-outline"}
               size={26}
               color={color}
             />
@@ -42,10 +42,10 @@ const BottomLayout = () => {
       <MaterialBottomTabs.Screen
         name="discover"
         options={{
-          tabBarLabel: 'Discover',
+          tabBarLabel: "Discover",
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons
-              name={focused ? 'compass' : 'compass-outline'}
+              name={focused ? "compass" : "compass-outline"}
               size={26}
               color={color}
             />
@@ -55,7 +55,7 @@ const BottomLayout = () => {
       <MaterialBottomTabs.Screen
         name="MyList"
         options={{
-          tabBarLabel: 'My List',
+          tabBarLabel: "My List",
           tabBarIcon: ({ color, focused }) =>
             focused ? (
               <MaterialIcons name="library-books" size={26} color={color} />
@@ -67,10 +67,10 @@ const BottomLayout = () => {
       <MaterialBottomTabs.Screen
         name="Settings"
         options={{
-          tabBarLabel: 'Settings',
+          tabBarLabel: "Settings",
           tabBarIcon: ({ color, focused }) => (
             <Setting2
-              variant={focused ? 'Bold' : 'Outline'}
+              variant={focused ? "Bold" : "Outline"}
               size={26}
               color={color}
             />

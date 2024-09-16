@@ -1,17 +1,15 @@
-import { useInfiniteQuery } from '@tanstack/react-query';
-import React from 'react';
-import { Text, View } from 'react-native';
-import { ActivityIndicator, useTheme } from 'react-native-paper';
-import { getPopularMovies } from '../../../api/network';
-import { MovieListResponse } from '../../../api/types';
-import GridData from '../../../components/GridData';
+import { useInfiniteQuery } from "@tanstack/react-query";
+import React from "react";
+import { Text, View } from "react-native";
+import { ActivityIndicator, useTheme } from "react-native-paper";
+import { getPopularMovies } from "../../../api/network";
+import { MovieListResponse } from "../../../api/types";
+import GridData from "../../../components/GridData";
 
 const MoviesTab = () => {
-  const theme = useTheme();
-
   const { data, isLoading, error, hasNextPage, fetchNextPage } =
     useInfiniteQuery({
-      queryKey: ['Movies'],
+      queryKey: ["Movies"],
       queryFn: ({ pageParam = 1 }) => getPopularMovies(pageParam),
       initialPageParam: 1,
       getNextPageParam: (lastPage: MovieListResponse) => {

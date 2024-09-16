@@ -1,13 +1,13 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import * as Font from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator } from 'react-native';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import * as Font from "expo-font";
+import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
+import React, { useEffect, useState } from "react";
+import { ActivityIndicator } from "react-native";
 import {
   MD3LightTheme as DefaultTheme,
   PaperProvider,
-} from 'react-native-paper';
+} from "react-native-paper";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -18,11 +18,11 @@ const _layout = () => {
     const loadFonts = async () => {
       try {
         await Font.loadAsync({
-          'Salsa-Regular': require('../assets/fonts/Salsa-Regular.ttf'),
+          "Salsa-Regular": require("../assets/fonts/Salsa-Regular.ttf"),
         });
         setFontsLoaded(true);
       } catch (error) {
-        console.error('Error loading fonts', error);
+        console.error("Error loading fonts", error);
       }
     };
     loadFonts();
@@ -35,7 +35,7 @@ const _layout = () => {
   }, [fontsLoaded]);
 
   if (!fontsLoaded) {
-    return <ActivityIndicator size={'large'} />;
+    return <ActivityIndicator size={"large"} />;
   }
 
   const theme = {
@@ -53,7 +53,7 @@ const _layout = () => {
         <Stack
           screenOptions={{
             headerShown: false,
-            headerTitle: 'Intro',
+            headerTitle: "Intro",
           }}
         >
           <Stack.Screen name="index" />

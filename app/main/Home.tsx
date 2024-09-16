@@ -1,7 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
-import { Text, View } from 'react-native';
-import { getPopularMovies } from '../../api/network';
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
+import { Text, View } from "react-native";
+import { getPopularMovies } from "../../api/network";
 
 const Home = () => {
   const {
@@ -9,7 +9,7 @@ const Home = () => {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['popular'],
+    queryKey: ["popular"],
     queryFn: async () => await getPopularMovies(1),
   });
 

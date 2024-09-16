@@ -1,17 +1,17 @@
-import React from 'react';
-import { SafeAreaView } from 'react-native';
-import { Appbar, useTheme } from 'react-native-paper';
+import React from "react";
+import { SafeAreaView } from "react-native";
+import { Appbar, useTheme } from "react-native-paper";
 
 import type {
   MaterialTopTabNavigationEventMap,
   MaterialTopTabNavigationOptions,
-} from '@react-navigation/material-top-tabs';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+} from "@react-navigation/material-top-tabs";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import type {
   ParamListBase,
   TabNavigationState,
-} from '@react-navigation/native';
-import { withLayoutContext } from 'expo-router';
+} from "@react-navigation/native";
+import { withLayoutContext } from "expo-router";
 
 const { Navigator } = createMaterialTopTabNavigator();
 
@@ -26,14 +26,14 @@ export default function TopTabsLayout() {
   const theme = useTheme();
 
   return (
-    <SafeAreaView className={'flex-1'}>
+    <SafeAreaView className={"flex-1"}>
       <Appbar.Header>
         <Appbar.Content
           title="Discover"
-          titleStyle={{ fontFamily: 'Salsa-Regular' }}
+          titleStyle={{ fontFamily: "Salsa-Regular" }}
         />
-        <Appbar.Action icon={'magnify'} onPress={() => {}} />
-        <Appbar.Action icon={'filter-variant'} onPress={() => {}} />
+        <Appbar.Action icon={"magnify"} onPress={() => {}} />
+        <Appbar.Action icon={"filter-variant"} onPress={() => {}} />
       </Appbar.Header>
       <MaterialTopTabs
         tabBarPosition="top"
@@ -46,19 +46,19 @@ export default function TopTabsLayout() {
           },
           tabBarStyle: { backgroundColor: theme.colors.background },
           tabBarLabelStyle: {
-            fontFamily: 'Salsa-Regular',
-            textTransform: 'none',
+            fontFamily: "Salsa-Regular",
+            textTransform: "none",
             fontSize: theme.fonts.titleMedium.fontSize,
           },
         }}
       >
         <MaterialTopTabs.Screen
           name="MoviesTab"
-          options={{ title: 'Movies' }}
+          options={{ title: "Movies" }}
         />
         <MaterialTopTabs.Screen
           name="TvShowsTab"
-          options={{ title: 'Tv Shows' }}
+          options={{ title: "Tv Shows" }}
         />
       </MaterialTopTabs>
     </SafeAreaView>
